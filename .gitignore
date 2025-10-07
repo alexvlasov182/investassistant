@@ -1,0 +1,48 @@
+# === Node.js ===
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.env
+.env.local
+.env.*.local
+
+# === Build / dist files ===
+dist/
+build/
+.cache/
+.next/
+out/
+
+# === Logs ===
+logs
+*.log
+*.log.*
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# === OS ===
+.DS_Store
+Thumbs.db
+
+# === Editor ===
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# === Frontend tools ===
+coverage/
+*.tsbuildinfo
+
+# === Backend ===
+__pycache__/
+*.py[cod]
+*.sqlite3
+
+# === Optional ===
+# Ignore uploads or generated files if you have them
+uploads/
