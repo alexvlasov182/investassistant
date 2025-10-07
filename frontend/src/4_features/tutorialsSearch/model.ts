@@ -20,6 +20,6 @@ export const $applySearch = computed($searchQuery, (query) => {
       threshold: 0.35,
     });
 
-    return query ? fuse.search(query).map((result) => result.item) : tutorials;
+    return query ? fuse.search(query).map((result) => result.item) : [...tutorials];
   };
 });

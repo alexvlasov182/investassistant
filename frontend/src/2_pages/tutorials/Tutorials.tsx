@@ -4,6 +4,7 @@ import { $tutorials } from './model';
 import { TrackCard } from 'entity/track';
 import { TutorialsSearch } from 'feature/tutorialsSearch';
 import NoTracks from './ui/NoTracks';
+import { TutorialsSort } from 'feature/tutorialsSort';
 
 export default function Tutorials() {
   const tutorials = useStore($tutorials);
@@ -24,6 +25,17 @@ export default function Tutorials() {
           </p>
         </header>
         <TutorialsSearch />
+        {tutorials.length > 0 && (
+          <div className="my-6 flex flex-col items-center justify-between gap-4 sm:flex-row">
+            {/* Left: results count */}
+            <span className="text-sm text-gray-600 dark:text-gray-300">
+              {tutorials.length} result{tutorials.length !== 1 && 's'} found
+            </span>
+
+            {/* Right: sort controls */}
+            <TutorialsSort />
+          </div>
+        )}
         {/* Cards grid */}
         <div
           className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 
