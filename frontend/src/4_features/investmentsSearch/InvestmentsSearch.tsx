@@ -1,7 +1,7 @@
 import { useStore } from '@nanostores/react';
 import { $searchQuery, clearSearchQuery } from './model';
 
-export default function TutorialsSearch() {
+export default function InvestmentsSearch() {
   const searchQuery = useStore($searchQuery);
 
   return (

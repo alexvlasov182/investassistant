@@ -2,7 +2,7 @@ import { useStore } from '@nanostores/react';
 import { useEffect } from 'react';
 import { Home } from 'page/home';
 import { Track } from 'page/track';
-import { Tutorials } from 'page/tutorials';
+import { Investments } from 'page/investments';
 
 import { $router } from 'shared/router';
 import { $theme } from 'shared/theme';
@@ -26,9 +26,9 @@ export default function App() {
   switch (page.route) {
     case 'home':
       return <Home />;
-    case 'tutorials':
-      return <Tutorials />;
-    case 'track':
-      return <Track trackId={page.params.trackId} />;
+    case 'investments':
+      return <Investments />;
+    case 'investment':
+      return <Track trackId={page.params.investmentId} />;
   }
 }

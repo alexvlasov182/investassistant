@@ -1,7 +1,6 @@
-import { TTrack } from 'entity/track/model';
+import { TInvestment } from 'entity/investments/model';
 import Fuse from 'fuse.js';
 import { atom, computed } from 'nanostores';
-import { tutorials } from 'page/tutorials';
 
 export const $searchQuery = atom<string>('');
 
@@ -14,12 +13,12 @@ export const clearSearchQuery = () => {
 };
 
 export const $applySearch = computed($searchQuery, (query) => {
-  return (tutorials: TTrack[]) => {
-    const fuse = new Fuse(tutorials, {
+  return (investments: TInvestment[]) => {
+    const fuse = new Fuse(investments, {
       keys: [{ name: 'title', weight: 2 }, 'description'],
       threshold: 0.35,
     });
 
-    return query ? fuse.search(query).map((result) => result.item) : [...tutorials];
+    return query ? fuse.search(query).map((result) => result.item) : [...investments];
   };
 });

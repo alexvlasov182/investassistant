@@ -1,4 +1,4 @@
-import { TTrack } from 'entity/track/model';
+import { TInvestment } from 'entity/investments/model';
 import { atom, computed } from 'nanostores';
 
 export const $sortOrder = atom<'asc' | 'desc'>('asc');
@@ -13,8 +13,8 @@ export function toggleSortOrder() {
 }
 
 export const $applySort = computed([$sortBy, $sortOrder], (sortedBy, sortOrder) => {
-  return (tutorials: TTrack[]) => {
-    const stored = tutorials.sort((a, b) => {
+  return (investments: TInvestment[]) => {
+    const stored = investments.sort((a, b) => {
       if (sortedBy === 'title') {
         return a.title.localeCompare(b.title);
       }

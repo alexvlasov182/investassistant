@@ -1,8 +1,8 @@
-import { tutorialsSearch } from 'feature/tutorialsSearch';
-import { tutorialsSort } from 'feature/tutorialsSort';
+import { investmentsSearch } from 'feature/investmentsSearch';
+import { investmentsSort } from 'feature/investmentsSort';
 import { computed } from 'nanostores';
 
-const tutorials = [
+const investments = [
   {
     id: 'lift-off-part1',
     title: 'Lift-off I: Basics',
@@ -48,9 +48,9 @@ const tutorials = [
   },
 ];
 
-export const $tutorials = computed(
-  [tutorialsSearch.$applySearch, tutorialsSort.$applySort],
+export const $investments = computed(
+  [investmentsSearch.$applySearch, investmentsSort.$applySort],
   (applySearch, applySort) => {
-    return applySort(applySearch(tutorials));
+    return applySort(applySearch(investments));
   },
 );

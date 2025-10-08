@@ -2,7 +2,7 @@ import { useStore } from '@nanostores/react';
 import { ArrowDown, ArrowUp } from 'lucide-react';
 import { $sortBy, $sortOrder, setSortBy, toggleSortOrder } from './model';
 
-export function TutorialsSort() {
+export function InvestmentsSort() {
   const sortBy = useStore($sortBy);
   const sortOrder = useStore($sortOrder);
 

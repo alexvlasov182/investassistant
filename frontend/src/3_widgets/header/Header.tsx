@@ -1,6 +1,6 @@
-import { getPagePath } from "@nanostores/router";
-import { ThemeToggle } from "feature/themeToggle";
-import { $router } from "shared/router";
+import { getPagePath } from '@nanostores/router';
+import { ThemeToggle } from 'feature/themeToggle';
+import { $router } from 'shared/router';
 
 export default function Header() {
   return (
@@ -9,7 +9,7 @@ export default function Header() {
       <div className="flex items-center gap-8">
         {/* Logo */}
         <a
-          href={getPagePath($router, "home")}
+          href={getPagePath($router, 'home')}
           className="flex items-center gap-2 font-semibold text-gray-800 dark:text-gray-100 hover:opacity-80 transition"
         >
           <svg
@@ -26,16 +26,16 @@ export default function Header() {
         {/* Navigation links right next to the logo */}
         <nav className="hidden items-center gap-4 text-sm font-medium md:flex">
           <a
-            href={getPagePath($router, "tutorials")}
+            href={getPagePath($router, 'investments')}
             className="text-gray-700 hover:text-amber-600 dark:text-gray-300 dark:hover:text-amber-400 transition"
           >
-            Tutorials
+            Investments
           </a>
           <a
             // href={getPagePath($router, "track")}
             className="text-gray-700 hover:text-amber-600 dark:text-gray-300 dark:hover:text-amber-400 transition"
           >
-            Tracks
+            Crypto
           </a>
         </nav>
       </div>

@@ -31,7 +31,7 @@ export default function CallToAction() {
         </p>
 
         <a
-          href={getPagePath($router, 'tutorials')}
+          href={getPagePath($router, 'investments')}
           className="inline-flex items-center justify-center gap-2 rounded-xl bg-indigo-600 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-indigo-500/30 transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:hover:bg-indigo-400"
         >
           Browse Tutorials

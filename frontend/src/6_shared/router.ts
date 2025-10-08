@@ -1,7 +1,7 @@
-import { createRouter } from '@nanostores/router'
+import { createRouter } from '@nanostores/router';
 
 export const $router = createRouter({
   home: '/',
-  tutorials: '/tutorials',
-  track: '/track/:trackId',
-})
+  investments: '/investments',
+  investment: '/investment/:investmentId',
+});

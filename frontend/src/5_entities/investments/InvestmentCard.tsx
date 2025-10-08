@@ -1,17 +1,17 @@
 import { getPagePath } from '@nanostores/router';
-import { TTrack } from './model';
+import { TInvestment } from './model';
 import { $router } from 'shared/router';
 
 type Props = {
-  track: TTrack;
+  investment: TInvestment;
 };
 
-export default function TrackCard({ track }: Props) {
-  const { id, title, description, trackType, imageUrl } = track;
+export default function InvestmentCard({ investment }: Props) {
+  const { id, title, description, category, imageUrl } = investment;
 
   return (
     <a
-      href={getPagePath($router, 'track', { trackId: id })}
+      href={getPagePath($router, 'investment', { investmentId: id })}
       className="
         group flex flex-col overflow-hidden rounded-xl border border-gray-200
         bg-white shadow-sm transition-all duration-300 ease-out
@@ -40,7 +40,7 @@ export default function TrackCard({ track }: Props) {
 
         <div className="mt-auto flex items-center justify-between">
           <span className="text-xs font-semibold uppercase tracking-wide text-amber-600 dark:text-amber-400">
-            {trackType}
+            {category}
           </span>
           <span className="text-xs text-gray-500 dark:text-gray-400 transition-colors group-hover:text-amber-600 dark:group-hover:text-amber-400">
             Learn more →

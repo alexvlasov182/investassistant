@@ -1,9 +1,9 @@
 export const store = null;
 
-export type TTrack = {
+export type TInvestment = {
   id: string;
   title: string;
   description: string;
   imageUrl: string;
-  trackType?: string;
+  category?: string;
 };
