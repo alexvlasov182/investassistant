@@ -1,17 +1,25 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
+	"os"
 )
 
 func main() {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintln(w, "Hello from Go backend!")
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+
+	// Serve static files from ./static
+	fs := http.FileServer(http.Dir("./static"))
+	http.Handle("/", fs)
+
+	// API separated
+	http.HandleFunc("/api/stocks", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		w.Write([]byte(`[{"symbol":"AAPL","price":175.64}]`))
 	})
 
-	fmt.Println("Starting server on :8080")
-	if err := http.ListenAndServe(":8080", nil); err != nil {
-		fmt.Println("Error starting server:", err)
-	}
+	http.ListenAndServe(":"+port, nil)
 }
